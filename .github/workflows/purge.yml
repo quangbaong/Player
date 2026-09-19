@@ -1,0 +1,12 @@
+﻿name: Purge CDN Cache
+on:
+  push:
+    paths:
+      - 'UID'
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge jsDelivr Cache
+        run: |
+          curl -s  https://purge.jsdelivr.net/gh/quangbaong/Player@main/UID
